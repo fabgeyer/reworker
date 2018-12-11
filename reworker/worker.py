@@ -1,7 +1,12 @@
 #!/usr/bin/env python
 
 import os
-import json
+try:
+    # Try using ujson as replacement for json
+    import ujson as json
+except:
+    # Fallback to standard json package
+    import json
 import redis
 import uuid
 import platform
